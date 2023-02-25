@@ -12,7 +12,8 @@ pool:
 steps:
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: - task: CopyFiles@2
+    PathtoPublish: 
+- task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.ArtifactStagingDirectory)'
     Contents: '**'
@@ -20,7 +21,6 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
     
-
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
